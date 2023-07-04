@@ -1,0 +1,60 @@
+:root {
+  --login-color: linear-gradient(45deg, #7752b4 0%, #ba618c 55%, #ebb1cc 100%);
+}
+
+#loginModal .modal-content {
+  position: relative;
+  background-image: var(--login-color);
+}
+#loginModal a {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  margin: 50px;
+}
+#loginModal .modal-header {
+  border-bottom: 0px;
+}
+#loginModal .modal-header h3 {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0px;
+  position: relative;
+  font-weight: 600;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#loginModal .modal-body form {
+  display: flex;
+  flex-direction: column;
+}
+#loginModal .modal-body form .form-floating {
+  width: 90%;
+  margin: 0 auto;
+}
+#loginModal .modal-body form .account,
+#loginModal .modal-body form .password {
+  margin: 15px auto;
+  width: 90%;
+  border-radius: 20px;
+}
+#loginModal .modal-body form .form-check {
+  width: 90%;
+  margin: 15px auto;
+  color: white;
+}
+#loginModal .modal-body form .btn {
+  width: 90%;
+  font-size: 25px;
+  margin: 0 auto;
+  color: white;
+}
+#loginModal .modal-footer {
+  border-top: 0;
+}
+#loginModal .modal-footer a {
+  font-size: 1rem;
+}
+#loginModal .modal-footer a:hover {
+  color: rgb(0, 0, 0);
+}/*# sourceMappingURL=loginModal.css.map */

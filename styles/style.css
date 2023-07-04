@@ -1,0 +1,480 @@
+@charset "UTF-8";
+@import url(./loginModal.css);
+@import url(./indexother.css);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+:root {
+  --top-nav-bg: #4f1a6c;
+  --green: #8bc24d;
+  --span-color: #ffef3d;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 2;
+  border: none;
+  outline: none;
+  background-color: rgb(212, 11, 11);
+  color: white;
+  cursor: pointer;
+  padding: 8px 13px;
+  border-radius: 10px;
+  font-size: 22px; /* Increase font size */
+}
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.right-sm-nav {
+  position: fixed;
+  right: 0;
+  top: 60%;
+  z-index: 2;
+}
+.right-sm-nav a {
+  text-decoration: none;
+  border-radius: 8px 0px 0px 8px;
+  transition: all 0.6s;
+}
+.right-sm-nav i {
+  font-size: 1.5rem;
+  padding: 8px;
+  color: white;
+}
+.right-sm-nav .fb {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 40px;
+}
+.right-sm-nav .fb:hover {
+  display: flex;
+  width: 120px;
+}
+.right-sm-nav .fb:hover::after {
+  content: "Facebook";
+  color: white;
+  line-height: 40px;
+}
+.right-sm-nav .instagram {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  width: 40px;
+}
+.right-sm-nav .instagram i::before {
+  padding-left: 1.5px;
+}
+.right-sm-nav .instagram:hover {
+  display: flex;
+  width: 120px;
+}
+.right-sm-nav .instagram:hover::after {
+  content: "Instagram";
+  color: white;
+  line-height: 40px;
+}
+.right-sm-nav .line {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 40px;
+}
+.right-sm-nav .line i::before {
+  padding-left: 1.5px;
+}
+.right-sm-nav .line:hover {
+  display: flex;
+  width: 80px;
+}
+.right-sm-nav .line:hover::after {
+  content: "Line";
+  color: white;
+  line-height: 40px;
+}
+
+.topnav {
+  display: flex;
+  background-color: var(--top-nav-bg);
+  height: 80px;
+  width: 100vw;
+  box-shadow: 0px 2px 8px 3px #111111;
+  position: fixed;
+  padding: 0px 5vw;
+  z-index: 2;
+  top: 0;
+}
+.topnav .logo {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Sansita Swashed", cursive;
+}
+.topnav .logo a {
+  text-decoration: none;
+}
+.topnav .logo p {
+  text-align: center;
+  margin: 0;
+  font-size: 3rem;
+  color: #00b48d;
+  line-height: 80px;
+}
+.topnav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: 100%;
+}
+.topnav li {
+  height: 100%;
+}
+.topnav .nav-list a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  height: 100%;
+  width: 130px;
+  position: relative;
+  transition: background-color 0.6s;
+  overflow: hidden;
+}
+.topnav .nav-list a span {
+  font-size: 18px;
+  position: absolute;
+  transition: all 0.7s;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translate(0px, -50%);
+  z-index: 2;
+}
+.topnav .nav-list a i {
+  position: absolute;
+  font-size: 0px;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.15s 0.25s;
+}
+.topnav .nav-list a::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: 90px;
+  background-color: rgba(167, 124, 248, 0.8);
+  transition: all 0.3s;
+}
+.topnav .nav-list a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: #ffef3d;
+  transition: all 0.8s;
+  border-radius: 25px;
+}
+.topnav a:hover span {
+  top: 25px;
+  font-size: 18px;
+  color: var(--span-color);
+}
+.topnav a:hover i {
+  opacity: 1;
+  font-size: 22px;
+}
+.topnav a:hover::after {
+  left: 0%;
+  right: 0%;
+}
+.topnav a:hover::before {
+  bottom: 0px;
+  opacity: 0.25;
+}
+.topnav .nav-burger-open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  /* 先把高度設 0 使選單隱藏 */
+  height: 0vh;
+  overflow: hidden;
+  background-color: #5c2d91;
+  text-align: center;
+  z-index: 3;
+  transition: height 0.8s;
+}
+.topnav .nav-burger-open a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  transition: color 0.6s, font-size 0.6s;
+}
+.topnav .nav-burger-open a:hover {
+  color: orange;
+  font-size: 3rem;
+}
+.topnav .nav-burger-open a:nth-child(1) {
+  padding-top: 100px;
+}
+.topnav .nav-right-section {
+  margin-left: auto;
+  display: flex;
+  /* 以下設定為點擊後上下橫線旋轉位移 */
+}
+.topnav .nav-right-section .member {
+  align-self: center;
+  margin-right: 32px;
+}
+.topnav .nav-right-section .member a {
+  text-decoration: none;
+}
+.topnav .nav-right-section .member a i {
+  color: white;
+  font-size: 1.5rem;
+}
+.topnav .nav-right-section .shop-cart {
+  align-self: center;
+}
+.topnav .nav-right-section .shop-cart a {
+  text-decoration: none;
+  height: 100%;
+}
+.topnav .nav-right-section .shop-cart a i {
+  color: white;
+  font-size: 1.5rem;
+}
+.topnav .nav-right-section .mobile-menu {
+  display: none;
+  position: relative;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 9;
+  align-self: center;
+  /* 漢堡選單中間橫槓 */
+  /* 漢堡選單上面橫槓 */
+  /* 漢堡選單下面橫槓 */
+}
+.topnav .nav-right-section .mobile-menu .mobile-menu__line, .topnav .nav-right-section .mobile-menu::before, .topnav .nav-right-section .mobile-menu::after {
+  position: absolute;
+  width: 100%;
+  height: 4.2px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+.topnav .nav-right-section .mobile-menu .mobile-menu__line {
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+  height: 4px;
+}
+.topnav .nav-right-section .mobile-menu::before {
+  content: "";
+  top: 0;
+}
+.topnav .nav-right-section .mobile-menu::after {
+  content: "";
+  bottom: 0;
+}
+.topnav .nav-right-section .open .mobile-menu__line {
+  /* 點擊後圖標中間橫線消失 */
+  display: none;
+}
+.topnav .nav-right-section .open.mobile-menu::before,
+.topnav .nav-right-section .open.mobile-menu::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.topnav .nav-right-section .open.mobile-menu::before {
+  transform: rotate(45deg);
+}
+.topnav .nav-right-section .open.mobile-menu::after {
+  transform: rotate(-45deg);
+}
+
+#offcanvasRight .offcanvas-header h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+#offcanvasRight .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+}
+#offcanvasRight .offcanvas-body section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#offcanvasRight .offcanvas-body section div.cart-order {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.2rem 0rem;
+  transition: all 0.1s ease;
+  padding: 0 5px;
+}
+#offcanvasRight .offcanvas-body section div.cart-order .drink-img {
+  height: 100px;
+  min-width: 15%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#offcanvasRight .offcanvas-body section div.cart-order .div-describe {
+  display: inline-block;
+  min-width: 70%;
+  padding: 5px 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#offcanvasRight .offcanvas-body section div.cart-order .div-describe h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#offcanvasRight .offcanvas-body section div.cart-order .div-describe p {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+#offcanvasRight .offcanvas-body section div.cart-order button {
+  padding: 0.2rem 0.2rem;
+  min-width: 15%;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+#offcanvasRight .offcanvas-body section div.cart-order button.trash {
+  background-color: red;
+}
+#offcanvasRight .offcanvas-body a {
+  width: 90%;
+  margin: 25px auto 0 auto;
+}
+
+footer {
+  background-color: #00b48d;
+}
+footer .top-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 160px 20px 160px;
+}
+footer .top-container a {
+  text-decoration: none;
+}
+footer .top-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer .top-container .footer-left {
+  min-width: 210px;
+}
+footer .top-container .footer-left h3 {
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+footer .top-container .footer-left li {
+  margin-bottom: 8px;
+}
+footer .top-container .footer-left a {
+  color: white;
+  font-size: 1rem;
+}
+footer .top-container .footer-left a:hover {
+  color: #8b0ef1;
+}
+footer .top-container .footer-right {
+  min-width: 210px;
+}
+footer .top-container .footer-right h3 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+footer .top-container .footer-right li {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+  .right-sm-nav {
+    display: none;
+  }
+  .shop-cart {
+    margin-right: 32px;
+  }
+  #mobile-menu {
+    display: block;
+  }
+  .nav-burger-open.open {
+    /* 偵測到 click 事件才會顯示高度 */
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 720px) {
+  footer .top-container {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  footer .top-container .footer-left,
+  footer .top-container .footer-right {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  footer .top-container .footer-right h3 {
+    margin-top: 20px;
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}/*# sourceMappingURL=style.css.map */

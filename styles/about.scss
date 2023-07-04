@@ -1,0 +1,196 @@
+@import url("./style.css");
+.top-img {
+  background-image: url("../img/about1.jpg");
+  background-attachment: fixed;
+  height: calc(100vh - 400px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 49%;
+  margin-top: 60px;
+}
+
+//區塊一
+.about-section-one {
+  padding-bottom: 20px;
+  //關於我們
+  .title {
+    h1 {
+      color: #6b2591;
+      font-family: "Comic Neue", cursive;
+      font-family: "Lilita One", cursive;
+      font-size: calc(1.375rem + 1.5vw);
+      padding: 30px 0;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .down {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    // position: relative;
+  }
+
+  .text-area {
+    flex: 1 1 auto;
+    padding: 30px 50px;
+    height: fit-content;
+    h1 {
+      color: #000000;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #98a206;
+      // font-family: "Comic Neue", cursive;
+      // font-family: "Lilita One", cursive;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+
+  .img-area {
+    flex: 1 0 500px;
+    width: 50%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+//區塊二
+.about-section-two {
+  background-image: url("../img/about-bg.jpg");
+  padding: 30px 5%;
+  background-attachment: fixed;
+
+  .section-two-text {
+    padding: 25px;
+    h2 {
+      text-align: center;
+      color: white;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 7px;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  }
+
+  .section-two-img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      width: 300px;
+      height: 400px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//區塊三
+.about-section-three {
+  padding: 20px 0;
+  //關於我們
+  .title {
+    h1 {
+      color: #6b2591;
+      font-family: "Comic Neue", cursive;
+      font-family: "Lilita One", cursive;
+      font-size: calc(1.375rem + 1.5vw);
+      padding: 30px 0;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .down {
+    display: flex;
+    align-items: center;
+    // flex-direction: row-reverse;
+    // position: relative;
+  }
+
+  .text-area {
+    flex: 1 1 auto;
+    padding: 30px 50px;
+    height: fit-content;
+    h1 {
+      color: #000000;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #98a206;
+      // font-family: "Comic Neue", cursive;
+      // font-family: "Lilita One", cursive;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+
+  .img-area {
+    flex: 1 0 500px;
+    width: 50%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .text-area {
+    h1 {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .down {
+    flex-direction: column !important;
+  }
+  .img-area {
+    width: 100% !important;
+    flex-basis: auto !important;
+  }
+  .text-area {
+    width: 100%;
+    padding: 30px !important;
+    // flex: 1 1 auto !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top-img {
+    height: 25vh;
+  }
+}

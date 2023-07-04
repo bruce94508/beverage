@@ -1,0 +1,265 @@
+@charset "UTF-8";
+@import url("./style.css");
+:root {
+  --line-border-fill: #ee1035; /*填滿狀態*/
+  --line-border-empty: #d6d6d6; /*未填滿狀態*/
+  --btn-hover: #ec5b73;
+}
+
+/* 主容器 */
+.container {
+  padding-top: 150px;
+  font-weight: bold;
+}
+
+/* 進度條容器 */
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative; /*可以針對progress-containe內部物件的位子去做調整*/
+  margin-bottom: 30px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+/* 預設進度「線條」 */
+.progress-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: -1;
+  transform: translateY(-50%); /*線條往上移動*/
+}
+
+/* 實際進度「線條」 */
+div.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%; /*一開始不會有進度，所以設0%*/
+  height: 3px;
+  z-index: -1;
+  transform: translateY(-50%); /*線條往上移動*/
+  transition: width 0.5s linear;
+}
+
+/* 步驟1、2、3 */
+div.circle {
+  color: rgb(0, 0, 0);
+  background-color: #c0c0c0;
+  border: 3px solid var(--line-border-empty);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  /* 讓數字置中對齊 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.5s linear;
+}
+
+#circle1::before {
+  content: "購物清單";
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  font-size: 16px;
+  color: black;
+  top: 40px;
+  width: 80px;
+  text-align: center;
+}
+
+#circle2::before {
+  content: "填寫資料";
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  font-size: 16px;
+  color: black;
+  top: 40px;
+  width: 80px;
+  text-align: center;
+}
+
+#circle3::before {
+  content: "送出訂單";
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  font-size: 16px;
+  color: black;
+  top: 40px;
+  width: 80px;
+  text-align: center;
+}
+
+/* 正在進行的步驟 */
+div.circle.active {
+  border: 3px solid var(--line-border-fill);
+  color: rgb(255, 255, 255);
+  background-color: #ec5b73;
+}
+
+.main-body {
+  margin-bottom: 100px;
+  padding: 48px;
+  background-color: #fffefe;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.3rem;
+}
+
+.cart .head,
+.second-form .head,
+.third-order .head {
+  font-weight: bold;
+  border-bottom: 1.6px solid #ec5b73;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.cart .head h1,
+.second-form .head h1,
+.third-order .head h1 {
+  font-weight: bold;
+  padding-bottom: 16px;
+  margin-bottom: 0;
+  font-size: 1.7rem;
+}
+.cart .head a,
+.second-form .head a,
+.third-order .head a {
+  text-decoration: none;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  color: rgb(101, 101, 101);
+  background-color: #c0c0c0;
+  border-radius: 8px;
+  padding: 1px 5px;
+}
+
+.btn-area {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+.btn-area .btn {
+  color: white;
+  background-color: var(--line-border-fill);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px 30px;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:focus {
+  outline: 0; /*或none*/
+}
+
+.btn:disabled {
+  cursor: not-allow;
+  background-color: var(--line-border-empty);
+}
+
+.list .cart-order {
+  display: flex;
+  background-color: #f3f3f3;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 8px;
+}
+.list .cart-order img {
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.list .cart-order .div-describe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+.list .cart-order .div-describe h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.list .cart-order .div-describe p {
+  color: #8f8f94;
+}
+.list .cart-order .div-btn-total {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: auto;
+  padding: 20px 10px 20px 10px;
+}
+.list .cart-order .div-btn-total button {
+  padding: 0.2rem 0.2rem;
+  width: 50px;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.list .cart-order .div-btn-total .trash {
+  background-color: red;
+}
+.list .cart-order .div-btn-total p {
+  font-size: 1.2rem;
+}
+
+.listTotal {
+  font-size: 1.5rem;
+  color: #4f1a6c;
+  text-align: end;
+  padding-top: 40px;
+}
+.listTotal p {
+  display: inline-block;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.third-order p {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cart-order .drink-img {
+    width: 60px !important;
+  }
+  .cart-order .div-describe {
+    padding-left: 10px !important;
+  }
+  .cart-order .div-describe h3 {
+    font-size: 1.2rem !important;
+  }
+  .cart-order .div-describe p {
+    font-size: 0.8rem !important;
+  }
+  .cart-order .div-btn-total button {
+    width: 40px !important;
+  }
+  .cart-order .div-btn-total .total {
+    font-size: 0.8rem !important;
+    margin-bottom: 0;
+  }
+  .listTotal {
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=cartpage.css.map */

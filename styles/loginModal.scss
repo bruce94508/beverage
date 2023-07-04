@@ -1,0 +1,73 @@
+:root {
+  --login-color: linear-gradient(45deg, #7752b4 0%, #ba618c 55%, #ebb1cc 100%);
+}
+
+#loginModal {
+  .modal-content {
+    position: relative;
+    // background-color: #7e57c2;
+    background-image: var(--login-color);
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    margin: 50px;
+  }
+
+  .modal-header {
+    border-bottom: 0px;
+    h3 {
+      font-size: 30px;
+      color: rgb(255, 255, 255);
+      margin-bottom: 0px;
+      position: relative;
+      font-weight: 600;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .modal-body {
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .form-floating {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .account,
+      .password {
+        margin: 15px auto;
+        width: 90%;
+        border-radius: 20px;
+      }
+
+      .form-check {
+        width: 90%;
+        margin: 15px auto;
+        color: white;
+      }
+
+      .btn {
+        width: 90%;
+        font-size: 25px;
+        margin: 0 auto;
+        color: white;
+      }
+    }
+  }
+
+  .modal-footer {
+    border-top: 0;
+    a {
+      font-size: 1rem;
+    }
+    a:hover {
+      color: rgb(0, 0, 0);
+    }
+  }
+}

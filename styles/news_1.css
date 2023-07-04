@@ -1,0 +1,30 @@
+@import url("./style.css");
+.container {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+.container .content {
+  width: 80%;
+  margin: 0 auto;
+}
+.container .content h3 {
+  margin: 40px 0;
+  color: #4f1a6c;
+}
+.container .content .top-img {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+}
+.container .content .top-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .content a {
+  display: block;
+  margin: 100px 0 0 0;
+  text-decoration: none;
+  text-align: center;
+}/*# sourceMappingURL=news_1.css.map */

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首頁</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.0-dist/css/bootstrap.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Sansita+Swashed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon -->
+    <link rel="icon" href="./img/favicon.ico" />
+    <!-- 字型動畫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body
+    style="
+      background-image: url(./background.jpg);
+      background-size: 400px;
+      background-repeat: repeat;
+    "
+  >
+    <!-- back to top btn -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      &#11165;
+    </button>
+
+    <!-- 右邊導覽列 -->
+    <div class="right-sm-nav">
+      <!-- 購物車 -->
+      <!-- <a
+        href="#"
+        target="_blank"
+        title="購物車"
+        class="cart"
+        style="background-color: #fabe01"
+      >
+        
+        <span
+          class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger"
+        >
+          0
+          <span class="visually-hidden">unread messages</span>
+        </span>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a> -->
+      <!-- facebook -->
+      <a
+        href="#"
+        target="_blank"
+        title="Facebook"
+        class="fb"
+        style="background-color: #1878f3"
+      >
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <!-- instagram -->
+      <a
+        href="#"
+        target="_blank"
+        title="instagram"
+        class="instagram"
+        style="background-color: #dd2a7b"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <!-- line -->
+      <a
+        href="#"
+        target="_blank"
+        title="line"
+        class="line"
+        style="background-color: #00b900"
+      >
+        <i class="fa-brands fa-line"></i>
+      </a>
+    </div>
+
+    <!-- 上方導覽列 -->
+    <div class="topnav">
+      <!-- logo -->
+      <div class="logo">
+        <a href="./index.html">
+          <p>beverage</p>
+        </a>
+      </div>
+      <!-- nav list -->
+      <div class="nav-list">
+        <ul>
+          <li>
+            <a href="./news.html"
+              ><span>最新消息</span><i class="fa-solid fa-newspaper"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./order.html"
+              ><span>點餐去</span
+              ><i class="fa-solid fa-martini-glass-citrus"></i
+            ></a>
+          </li>
+          <li>
+            <a href="./about.html"
+              ><span>關於我們</span><i class="fa-solid fa-leaf"></i
+            ></a>
+          </li>
+          <li>
+            <a href="./contact.html"
+              ><span>聯絡我們</span><i class="fa-solid fa-envelope"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- nav-right-section -->
+      <div class="nav-right-section">
+        <!-- 會員登入 -->
+        <div class="member">
+          <a
+            href="#"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            <i class="fa-solid fa-circle-user"></i>
+          </a>
+        </div>
+
+        <!-- 購物車 -->
+        <div class="shop-cart">
+          <a
+            href="#"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+          >
+            <i class="fa-solid fa-cart-shopping position-relative">
+              <!-- 購物車提示徽章 -->
+              <span
+                class="position-absolute translate-middle badge rounded-pill bg-danger"
+                style="font-size: 10px; top: -3px; left: 30px"
+                id="cartAmount"
+              >
+                0
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </i>
+          </a>
+        </div>
+        <!-- 漢堡圖選單 -->
+        <div id="mobile-menu" class="mobile-menu">
+          <span class="mobile-menu__line"></span>
+        </div>
+      </div>
+
+      <!-- 漢堡圖觸發選單 -->
+      <div class="nav-burger-open">
+        <a href="./news.html">最新消息</a>
+        <a href="./order.html">點餐去</a>
+        <a href="./about.html">關於我們</a>
+        <a href="./contact.html">聯絡我們</a>
+      </div>
+    </div>
+
+    <!-- login Modal跳出視窗內容 放main外 -->
+    <div class="modal fade" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header">
+            <h3>會員登入</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <!-- 登入表單 -->
+            <form>
+              <!-- email -->
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="account form-control"
+                  placeholder="Email"
+                />
+              </div>
+              <!-- password -->
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="password form-control"
+                  placeholder="Password"
+                />
+              </div>
+
+              <!-- checkbox -->
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="remember"
+                />
+                <label class="form-check-label" for="remember">
+                  記住我的密碼
+                </label>
+              </div>
+              <!-- 送出按鈕 -->
+              <button type="button" class="btn btn-info shadow">登入</button>
+            </form>
+          </div>
+          <!-- Footer -->
+          <div class="modal-footer">
+            <div class="signup">
+              <a href="#" class="member"> 立即註冊 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 購物車offcanvas右側移入 -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+      <div class="offcanvas-header">
+        <!-- 標題 -->
+        <h5 id="offcanvasRightLabel">購物車</h5>
+        <!-- 關閉按鈕 -->
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <section></section>
+
+        <a href="./cartpage.html" class="btn btn-danger shadow">前往結帳</a>
+        <!-- <button class="btn btn-danger shadow">前往結帳</button> -->
+      </div>
+
+      <!-- 購物車沒東西的時候出現 -->
+      <div class="cart-nothing text-center p-5">
+        <i class="fa-solid fa-face-sad-tear mb-4" style="font-size: 3.5rem"></i>
+        <p style="font-size: 1.2rem; font-weight: bold">購物車空空的喔!</p>
+        <a href="./order.html" class="btn btn-danger w-100">點擊購物!</a>
+      </div>
+    </div>
+
+    <!-- 首頁banner -->
+    <div class="banner">
+      <div class="banner-center">
+        <h1 class="animate__animated animate__pulse animate__infinite infinite">
+          beverage
+        </h1>
+        <h2 class="animate__animated animate__backInRight">
+          Lorem ipsum dolor sit amet.
+        </h2>
+        <a href="./order.html" class="btn"><span>點餐去</span></a>
+      </div>
+    </div>
+
+    <!-- section-one:news -->
+    <div class="section-one">
+      <div class="container">
+        <div class="title">
+          <h1>最新消息</h1>
+          <p>&nbsp;news</p>
+        </div>
+        <!-- 最新消息卡片區 -->
+        <div class="row">
+          <div class="outer col-md-4 gap-5">
+            <div
+              class="card"
+              data-aos="zoom-in"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <img src="./img/紅茶拿鐵半價.png" />
+              <h3>第二杯半價</h3>
+              <p>紅茶拿鐵第二杯半價!</p>
+              <a href="./news_1.html"></a>
+              <div class="more-btn"><a href="#">了解更多</a></div>
+            </div>
+          </div>
+          <div class="outer col-md-4 gap-5">
+            <div
+              class="card"
+              data-aos="zoom-in"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <img src="./img/集點.png" />
+              <h3>集點享優惠</h3>
+              <p>滿69元，贈1點。</p>
+              <a href="#"></a>
+              <div class="more-btn"><a href="#">了解更多</a></div>
+            </div>
+          </div>
+          <div class="outer col-md-4 gap-5">
+            <div
+              class="card"
+              data-aos="zoom-in"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <img src="./img/自備飲料杯.png" />
+              <h3>自備飲料杯</h3>
+              <p>自備飲料杯省5元。</p>
+              <a href="#"></a>
+              <div class="more-btn"><a href="#">了解更多</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- section-two: hot product -->
+    <div class="section-two container">
+      <div class="top-section">
+        <div class="gallery-outside">
+          <div class="gallery">
+            <img src="./img/card1.jpg" />
+            <img src="./img/card2.jpg" />
+            <img src="./img/card3.jpg" />
+            <img src="./img/card4.jpg" />
+            <img src="./img/card5.jpg" />
+          </div>
+        </div>
+        <!-- 描述 -->
+        <div class="introduce">
+          <div
+            class="title"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1200"
+            data-aos-anchor-placement="center-bottom"
+          >
+            <h1>HOT PRODUCT</h1>
+            <p>&nbsp;飲品介紹</p>
+          </div>
+
+          <div
+            class="pre-animate"
+            data-aos="zoom-out-left"
+            data-aos-duration="1200"
+            data-aos-anchor-placement="center-bottom"
+          >
+            <p>茶即是生活態度。</p>
+            <p>我們相信每一杯茶代表的都是一段情感、一個回憶。</p>
+            <p>喝茶自然而然地成為我們生活的一部分。</p>
+            <p>我們自許不只追求泡茶手藝，更能將茶的生活態度推廣至全世界。</p>
+          </div>
+        </div>
+      </div>
+      <!-- 排名 -->
+      <div class="down-section row">
+        <div
+          class="top-rank-card col-lg-3 col-sm-12 col-md-6"
+          data-aos="zoom-out"
+          data-aos-duration="2000"
+          data-aos-anchor-placement="top-center"
+        >
+          <img src="./img/奶蓋紅茶.png" />
+          <h3>No.1&nbsp;&nbsp; 奶蓋紅茶</h3>
+        </div>
+
+        <div
+          class="top-rank-card col-lg-3 col-sm-12 col-md-6"
+          data-aos="zoom-out"
+          data-aos-duration="2000"
+          data-aos-anchor-placement="top-center"
+        >
+          <img src="./img/珍奶.png" />
+          <h3>No.2&nbsp;&nbsp; 珍珠奶茶</h3>
+        </div>
+
+        <div
+          class="top-rank-card col-lg-3 col-sm-12 col-md-6"
+          data-aos="zoom-out"
+          data-aos-duration="2000"
+          data-aos-anchor-placement="top-center"
+        >
+          <img src="./img/奶綠.png" />
+          <h3>No.3&nbsp;&nbsp; 奶綠</h3>
+        </div>
+
+        <div
+          class="top-rank-card col-lg-3 col-sm-12 col-md-6"
+          data-aos="zoom-out"
+          data-aos-duration="2000"
+          data-aos-anchor-placement="top-center"
+        >
+          <img src="./img/芒果汁.png" />
+          <h3>No.4&nbsp;&nbsp; 現榨芒果汁</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- section-three -->
+    <div class="section-three">
+      <div class="section-three-text">
+        <p>
+          茶，是時光的流動，<br />
+          是一段無需言語的對話
+        </p>
+        <p>
+          茶，是我們靈感的泉源，<br />
+          為日常生活帶來味蕾慢旅
+        </p>
+        <p>
+          茶，是生活，值得再三玩味，<br />
+          值得細細品嚐
+        </p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="top-container">
+        <!-- 左邊 -->
+        <div class="footer-left">
+          <h3>導覽列</h3>
+          <ul>
+            <li><a href="./news.html">最新消息</a></li>
+            <li><a href="./order.html">點餐去</a></li>
+            <li><a href="./about.html">關於我們</a></li>
+            <li><a href="./contact.html">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <!-- 中間 -->
+        <!-- <div class="footer-left">
+          <h3>社群平台</h3>
+          <ul>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">instagram</a></li>
+            <li><a href="#">line</a></li>
+            <li><a href="#">youtube</a></li>
+          </ul>
+        </div> -->
+
+        <!-- 右邊 -->
+        <div class="footer-right">
+          <h3>聯絡我們</h3>
+          <ul>
+            <li>service@drink.com.tw</li>
+            <li>MON.-FRI. 09:00-21:00</li>
+            <li>加盟專線+886-000-000-000</li>
+            <li>台中市某區某某路某號</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- bootstrap js -->
+    <script src="./bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/5f94d3cb27.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- myjs -->
+    <script src="./main.js"></script>
+    <!-- newscard js -->
+    <script src="./newscard.js"></script>
+  </body>
+</html>

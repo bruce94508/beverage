@@ -1,0 +1,31 @@
+@import url("./style.css");
+.container {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  background-color: white;
+
+  .content {
+    width: 80%;
+    margin: 0 auto;
+    h3 {
+      margin: 40px 0;
+      color: #4f1a6c;
+    }
+    .top-img {
+      width: 100%;
+      display: flex;
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    a {
+      display: block;
+      margin: 100px 0 0 0;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}

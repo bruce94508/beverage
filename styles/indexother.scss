@@ -1,0 +1,381 @@
+//banner
+.banner {
+  background-image: url(../img/banner2.jpg);
+  background-attachment: fixed;
+  height: calc(100vh - 100px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 80%;
+  // width: 100vw;
+  position: relative;
+  &::after {
+    content: "";
+    background-color: rgba($color: black, $alpha: 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .banner-center {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+
+    h1 {
+      color: #ffffff;
+      font-family: "Noto Sans TC", sans-serif;
+      font-family: "Sansita Swashed", cursive;
+      font-size: 5rem;
+      margin-bottom: 40px;
+      text-shadow: 0.1em 0.1em 0.15em black;
+    }
+    h2 {
+      color: rgb(255, 255, 255);
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      text-shadow: black 0.1em 0.1em 0.15em;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #f55419;
+      width: 40%;
+      padding: 5px 15px;
+      overflow: hidden;
+      outline: none;
+      border: none;
+      position: relative;
+      span {
+        position: relative;
+        z-index: 1;
+      }
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        right: -40px;
+        bottom: 90px;
+        background-color: #9a0cdc;
+        transition: all 0.3s;
+      }
+      &:hover::before {
+        // background-color: #fc662f;
+        bottom: -30px;
+      }
+    }
+  }
+}
+
+//news card area section-one
+.section-one {
+  // width: 100vw;
+  padding: 90px 0;
+  background-color: #4f1a6c;
+  overflow: hidden;
+  .title {
+    h1 {
+      font-weight: 600;
+      color: #ffffff;
+      display: inline-block;
+      text-shadow: black 0.1em 0.1em 0.15em;
+    }
+    p {
+      font-family: "Noto Sans TC", sans-serif;
+      font-family: "Sansita Swashed", cursive;
+      color: #ffffff;
+      font-size: 1.5rem;
+      display: inline-block;
+      text-shadow: black 0.1em 0.1em 0.15em;
+    }
+  }
+
+  .outer {
+    transform-style: preserve-3d;
+    perspective: 500px;
+    padding: 20px;
+  }
+  .card {
+    width: 100%;
+    // height: 100%;
+    display: grid;
+    place-content: center;
+    color: #23232d;
+    font-size: 2rem;
+    background-color: #af6e9a;
+
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    img {
+      width: 100%;
+      // height: 250px;
+      object-fit: cover;
+    }
+    h3 {
+      color: rgb(255, 255, 255);
+      transition: all 0.5s;
+      margin-top: 20px;
+      font-weight: 600;
+      text-shadow: black 0.1em 0.1em 0.15em;
+    }
+    p {
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      text-shadow: black 0.1em 0.1em 0.15em;
+    }
+
+    .more-btn {
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      // width: 30%;
+      margin-left: auto;
+      border: none;
+      outline: none;
+      background-color: #4f1a6c;
+      overflow: hidden;
+      position: relative;
+      a {
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+        color: white;
+      }
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        right: -40px;
+        bottom: 90px;
+        background-color: #e98913;
+        transition: all 0.3s;
+      }
+    }
+
+    a {
+      position: absolute;
+      inset: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    &:hover h3 {
+      color: #ffcd42;
+    }
+  }
+
+  .card:hover .more-btn::before {
+    bottom: -30px;
+  }
+
+  // .card::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -2%;
+  //   left: -2%;
+  //   width: 104%;
+  //   height: 104%;
+  //   background: inherit;
+  //   filter: blur(10px);
+  //   opacity: 0.8;
+  //   z-index: -1;
+  // }
+}
+
+//section-two
+.section-two {
+  padding: 150px 0 120px 0px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // 上
+  .top-section {
+    display: flex;
+    margin-left: 100px;
+    .gallery-outside {
+      .gallery {
+        --d: 10s; /* duration */
+        display: grid;
+        width: 240px;
+        img {
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+          border-radius: 0.4rem;
+          object-fit: cover;
+
+          grid-area: 1 / 1;
+          width: 100%;
+          aspect-ratio: 1;
+          border: 8px solid #e3e3e3;
+          animation: slide var(--d) infinite;
+          rotate: var(--r);
+        }
+        img:nth-child(1) {
+          animation-delay: calc(0 * var(--d));
+          --r: 10deg;
+        }
+
+        img:nth-child(2) {
+          animation-delay: calc(-0.2 * var(--d));
+          --r: 12deg;
+        }
+
+        img:nth-child(3) {
+          animation-delay: calc(-0.4 * var(--d));
+          --r: 20deg;
+        }
+
+        img:nth-child(4) {
+          animation-delay: calc(-0.6 * var(--d));
+          --r: -8deg;
+        }
+
+        img:nth-child(5) {
+          animation-delay: calc(-0.8 * var(--d));
+          --r: -14deg;
+        }
+      }
+    }
+    .introduce {
+      margin-left: 22vw;
+      .title {
+        margin-bottom: 20px;
+        h1 {
+          font-family: "Comic Neue", cursive;
+          font-family: "Lilita One", cursive;
+          display: inline-block;
+          color: #4f1a6c;
+        }
+        p {
+          font-family: "Comic Neue", cursive;
+          font-family: "Lilita One", cursive;
+          display: inline-block;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #4f1a6c;
+        }
+      }
+      p {
+        margin-bottom: 3px;
+        font-family: "Comic Neue", cursive;
+        font-family: "Lilita One", cursive;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  //下
+  .down-section {
+    margin-top: 100px;
+    .top-rank-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      bottom: 0px;
+      transition: all 0.4s;
+      img {
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-family: "Comic Neue", cursive;
+        font-family: "Lilita One", cursive;
+      }
+
+      &:hover {
+        bottom: 40px;
+      }
+    }
+  }
+}
+
+.section-three {
+  background-image: url("../img/index_s3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center 0%;
+  padding: 60px 0;
+
+  .section-three-text {
+    width: fit-content;
+    padding: 0 15vw;
+    margin-left: auto;
+    p {
+      color: white;
+      font-family: "Noto Sans TC", sans-serif;
+      font-family: "Sansita Swashed", cursive;
+      font-size: 1.3rem;
+    }
+  }
+}
+/* 
+      n = 5 number of images
+      0.1
+      50 / n = 10
+      50 / n + 0.1 = 10.1
+      100 / n = 20
+      100 - 100 / n = 80
+      100 - 100 / n + 0.1 = 80.1
+      */
+
+@keyframes slide {
+  0.1% {
+    z-index: 1;
+  }
+  10% {
+    translate: 120%;
+    z-index: 1;
+  }
+  10.1% {
+    translate: 120%;
+    z-index: -3;
+  }
+  20%,
+  80% {
+    translate: 0%;
+    z-index: -3;
+  }
+  80.1% {
+    translate: 0%;
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 !important;
+    .introduce {
+      margin: 100px 0 0 0vw !important;
+      padding-left: 20px;
+    }
+  }
+  // .down-section {
+  //   .top-rank-card {
+  //     margin: 0;
+  //   }
+  // }
+}
+
+@media screen and (max-width: 576px) {
+  .banner-center {
+    padding-left: 50px !important;
+  }
+}

@@ -1,0 +1,167 @@
+@import url("./style.css");
+.top-img {
+  background-image: url("../img/about1.jpg");
+  background-attachment: fixed;
+  height: calc(100vh - 400px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 49%;
+  margin-top: 60px;
+}
+
+.about-section-one {
+  padding-bottom: 20px;
+}
+.about-section-one .title h1 {
+  color: #6b2591;
+  font-family: "Comic Neue", cursive;
+  font-family: "Lilita One", cursive;
+  font-size: calc(1.375rem + 1.5vw);
+  padding: 30px 0;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+.about-section-one .down {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.about-section-one .text-area {
+  flex: 1 1 auto;
+  padding: 30px 50px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.about-section-one .text-area h1 {
+  color: #000000;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.about-section-one .text-area h3 {
+  color: #98a206;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.about-section-one .text-area p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+.about-section-one .img-area {
+  flex: 1 0 500px;
+  width: 50%;
+}
+.about-section-one .img-area img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about-section-two {
+  background-image: url("../img/about-bg.jpg");
+  padding: 30px 5%;
+  background-attachment: fixed;
+}
+.about-section-two .section-two-text {
+  padding: 25px;
+}
+.about-section-two .section-two-text h2 {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.about-section-two .section-two-text p {
+  margin-bottom: 7px;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.about-section-two .section-two-img {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-section-two .section-two-img img {
+  width: 300px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.about-section-three {
+  padding: 20px 0;
+}
+.about-section-three .title h1 {
+  color: #6b2591;
+  font-family: "Comic Neue", cursive;
+  font-family: "Lilita One", cursive;
+  font-size: calc(1.375rem + 1.5vw);
+  padding: 30px 0;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+.about-section-three .down {
+  display: flex;
+  align-items: center;
+}
+.about-section-three .text-area {
+  flex: 1 1 auto;
+  padding: 30px 50px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.about-section-three .text-area h1 {
+  color: #000000;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.about-section-three .text-area h3 {
+  color: #98a206;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.about-section-three .text-area p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+.about-section-three .img-area {
+  flex: 1 0 500px;
+  width: 50%;
+}
+.about-section-three .img-area img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .text-area h1 {
+    font-size: 2rem !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .down {
+    flex-direction: column !important;
+  }
+  .img-area {
+    width: 100% !important;
+    flex-basis: auto !important;
+  }
+  .text-area {
+    width: 100%;
+    padding: 30px !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .top-img {
+    height: 25vh;
+  }
+}/*# sourceMappingURL=about.css.map */
